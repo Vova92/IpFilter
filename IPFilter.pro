@@ -24,4 +24,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 DISTFILES += \
     .travis.yml \
+    CMakeLists.txt \
+    .travis.yml \
     CMakeLists.txt
