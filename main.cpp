@@ -12,6 +12,13 @@
 // ("11.", '.') -> ["11", ""]
 // (".11", '.') -> ["", "11"]
 // ("11.22", '.') -> ["11", "22"]
+void sorting(std::vector<std::vector<int>> *some_vector)
+{
+    std::sort(some_vector->begin(), some_vector->end(),
+              [](const std::vector<int>& a, const std::vector<int>& b) {
+        return a > b;
+    });
+}
 std::vector<std::string> split(const std::string &str, char d)
 {
     std::vector<std::string> r;
@@ -53,6 +60,9 @@ int main()
     std::string IP;
     std::vector<std::vector<std::string> > ip_pool;
     std::vector<std::vector<int>> ip_pool_int;
+    std::vector<std::vector<int>> ip_pool_int_one;
+    std::vector<std::vector<int>> ip_pool_int_four_sev;
+    std::vector<std::vector<int>> ip_pool_int_foursix;
     if (!someFile.is_open())
         std::cout << "Could not open file: " << fileName << std::endl;
     if (someFile.is_open())
@@ -70,14 +80,26 @@ int main()
         {
             ip_int.push_back(std::stoi(*ip_part));
         }
+        if (ip_int[0] == 1)
+            ip_pool_int_one.push_back(ip_int);
+        if (ip_int[0] == 46)
+            if (ip_int[1] == 70)
+                ip_pool_int_four_sev.push_back(ip_int);
+        for (int i = 0; i <= ip_int.size(); i++)
+            if (ip_int[i] == 46)
+                ip_pool_int_foursix.push_back(ip_int);
         ip_pool_int.push_back(ip_int);
     }
-//    std::sort(ip_pool.cbegin(), ip_pool.cend());
-    std::sort(ip_pool_int.begin(), ip_pool_int.end(),
-              [](const std::vector<int>& a, const std::vector<int>& b) {
-        return a[0] > b[0];
-    });
+
+    sorting(&ip_pool_int);
+    sorting(&ip_pool_int_one);
+    sorting(&ip_pool_int_four_sev);
+    sorting(&ip_pool_int_foursix);
+
     vector_out(&ip_pool_int);
+    vector_out(&ip_pool_int_one);
+    vector_out(&ip_pool_int_four_sev);
+    vector_out(&ip_pool_int_foursix);
 
         // TODO reverse lexicographically sort
 
