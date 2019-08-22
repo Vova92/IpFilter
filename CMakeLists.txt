@@ -10,7 +10,7 @@ add_executable(IPFilter_cli main.cpp)
 add_library(IPFilter lib.cpp)
 #add_executable(test_version test_version.cpp)
 
-set_target_properties(IPFilter_cli IPFilter test_version PROPERTIES
+set_target_properties(IPFilter_cli IPFilter PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
 )
