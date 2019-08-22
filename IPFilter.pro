@@ -26,8 +26,8 @@ DISTFILES += \
     .travis.yml \
     CMakeLists.txt \
     .travis.yml \
-    CMakeLists.txt \
-    version.h.in
+    CMakeLists.txt
 
 HEADERS += \
-    lib.h
+    lib.h \
+    version.h
