@@ -9,7 +9,9 @@ CONFIG -= app_bundle
 
 TEMPLATE = app
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    lib.cpp \
+    test_version.cpp
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings
@@ -26,8 +28,8 @@ DISTFILES += \
     .travis.yml \
     CMakeLists.txt \
     .travis.yml \
-    CMakeLists.txt
+    CMakeLists.txt \
+    version.h.in
 
 HEADERS += \
-    lib.h \
-    version.h
+    lib.h
