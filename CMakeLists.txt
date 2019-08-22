@@ -43,9 +43,9 @@ else ()
     target_compile_options(IPFilter_cli PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
-    target_compile_options(IPFilter PRIVATE
-        -Wall -Wextra -pedantic -Werror
-    )
+#    target_compile_options(IPFilter PRIVATE
+#        -Wall -Wextra -pedantic -Werror
+#    )
 #    target_compile_options(test_version PRIVATE
 #        -Wall -Wextra -pedantic -Werror
 #    )
