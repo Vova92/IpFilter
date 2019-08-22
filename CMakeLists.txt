@@ -22,7 +22,7 @@ set_target_properties(test_version PROPERTIES
     INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
 )
 
-target_link_libraries(helloworld_cli PRIVATE
+target_link_libraries(IPFilter_cli PRIVATE
     IPFilter
 )
 target_link_libraries(test_version
