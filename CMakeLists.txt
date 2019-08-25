@@ -4,27 +4,27 @@ project(IPFilter VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
-configure_file(version.h.in version.h)
+#configure_file(version.h.in version.h)
 
 add_executable(IPFilter_cli main.cpp)
 add_library(IPFilter lib.cpp)
-add_executable(test_version test_version.cpp)
+add_executable(test test.cpp)
 
-set_target_properties(IPFilter_cli IPFilter test_version PROPERTIES
+set_target_properties(IPFilter_cli IPFilter test PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
 )
 target_include_directories(IPFilter
     PRIVATE "${CMAKE_BINARY_DIR}"
 )
-set_target_properties(test_version PROPERTIES
+set_target_properties(test PROPERTIES
     COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
     INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
 )
 target_link_libraries(IPFilter_cli PRIVATE
 IPFilter
 )
-target_link_libraries(test_version
+target_link_libraries(test
 ${Boost_LIBRARIES}
 IPFilter
 )
@@ -43,4 +43,4 @@ include(CPack)
 
 enable_testing()
 
-add_test(test_version test_version)
+add_test(test test)

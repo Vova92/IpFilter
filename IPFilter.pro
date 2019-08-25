@@ -8,10 +8,14 @@ CONFIG += console
 CONFIG -= app_bundle
 
 TEMPLATE = app
-
+win32-g++ {
+    INCLUDEPATH += C:/boost/boost_mingw_53_32/include/boost-1_70
+    LIBS += "-LC:/boost/boost_mingw_53_32/lib"\
+            -llibboost_unit_test_framework-mgw53-mt-x32-1_70
+}
 SOURCES += main.cpp \
     lib.cpp \
-    test_version.cpp
+    test.cpp
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings
@@ -28,8 +32,9 @@ DISTFILES += \
     .travis.yml \
     CMakeLists.txt \
     .travis.yml \
-    CMakeLists.txt \
-    version.h.in
+    CMakeLists.txt
 
 HEADERS += \
-    lib.h
+    lib.h \
+    version.h \
+    main.h

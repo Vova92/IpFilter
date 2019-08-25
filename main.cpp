@@ -12,8 +12,26 @@
 // ("11.", '.') -> ["11", ""]
 // (".11", '.') -> ["", "11"]
 // ("11.22", '.') -> ["11", "22"]
-void sorting(std::vector<std::vector<int>> *some_vector)
+bool IPF_R = 0;
+bool IPF_O = 0;
+bool IPF_F_S = 0;
+bool IPF_F = 0;
+
+bool IP_filtration_check_result(int number)
 {
+    if (number == 1)
+        return IPF_R;
+    if (number == 2)
+        return IPF_O;
+    if (number == 3)
+        return IPF_F_S;
+    if (number == 4)
+        return IPF_F;
+}
+
+void sorting(std::vector<std::vector<int>> *some_vector, bool *check)
+{
+    *check = true;
     std::sort(some_vector->begin(), some_vector->end(),
               [](const std::vector<int>& a, const std::vector<int>& b) {
         return a > b;
@@ -85,16 +103,16 @@ int main()
         if (ip_int[0] == 46)
             if (ip_int[1] == 70)
                 ip_pool_int_four_sev.push_back(ip_int);
-        for (int i = 0; i <= ip_int.size(); i++)
+        for (unsigned int i = 0; i <= ip_int.size(); i++)
             if (ip_int[i] == 46)
                 ip_pool_int_foursix.push_back(ip_int);
         ip_pool_int.push_back(ip_int);
     }
 
-    sorting(&ip_pool_int);
-    sorting(&ip_pool_int_one);
-    sorting(&ip_pool_int_four_sev);
-    sorting(&ip_pool_int_foursix);
+    sorting(&ip_pool_int, &IPF_R);
+    sorting(&ip_pool_int_one, &IPF_O);
+    sorting(&ip_pool_int_four_sev, &IPF_F_S);
+    sorting(&ip_pool_int_foursix, &IPF_F);
 
     vector_out(&ip_pool_int);
     vector_out(&ip_pool_int_one);
