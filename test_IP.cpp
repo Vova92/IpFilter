@@ -11,23 +11,23 @@ BOOST_AUTO_TEST_CASE(test_valid_version)
 BOOST_AUTO_TEST_SUITE_END()
 
 
-BOOST_AUTO_TEST_SUITE(test_ip_filtration)
+//BOOST_AUTO_TEST_SUITE(test_ip_filtration)
 
-BOOST_AUTO_TEST_CASE(test_ip_reverse)
-{
-    BOOST_CHECK(IP_filtration_check_result(1));
-}
+//BOOST_AUTO_TEST_CASE(test_ip_reverse)
+//{
+//    BOOST_CHECK(IP_filtration_check_result(1));
+//}
 
-BOOST_AUTO_TEST_CASE(test_ip_one)
-{
-    BOOST_CHECK(IP_filtration_check_result(2));
-}
-BOOST_AUTO_TEST_CASE(test_ip_four_sev)
-{
-    BOOST_CHECK(IP_filtration_check_result(3));
-}
-BOOST_AUTO_TEST_CASE(test_ip_foursix)
-{
-    BOOST_CHECK(IP_filtration_check_result(4));
-}
-BOOST_AUTO_TEST_SUITE_END()
+//BOOST_AUTO_TEST_CASE(test_ip_one)
+//{
+//    BOOST_CHECK(IP_filtration_check_result(2));
+//}
+//BOOST_AUTO_TEST_CASE(test_ip_four_sev)
+//{
+//    BOOST_CHECK(IP_filtration_check_result(3));
+//}
+//BOOST_AUTO_TEST_CASE(test_ip_foursix)
+//{
+//    BOOST_CHECK(IP_filtration_check_result(4));
+//}
+//BOOST_AUTO_TEST_SUITE_END()
