@@ -21,12 +21,13 @@ bool IP_filtration_check_result(int number)
 {
     if (number == 1)
         return IPF_R;
-    if (number == 2)
+    else if (number == 2)
         return IPF_O;
-    if (number == 3)
+    else if (number == 3)
         return IPF_F_S;
-    if (number == 4)
+    else if (number == 4)
         return IPF_F;
+    else return 0;
 }
 
 void sorting(std::vector<std::vector<int>> *some_vector, bool *check)
