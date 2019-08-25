@@ -4,7 +4,7 @@ project(IPFilter VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
-#configure_file(version.h.in version.h)
+configure_file(version.h.in version.h)
 
 add_executable(IPFilter_cli main.cpp)
 add_library(IPFilter lib.cpp)
