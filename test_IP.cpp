@@ -10,7 +10,8 @@ BOOST_AUTO_TEST_CASE(test_valid_version)
 }
 BOOST_AUTO_TEST_SUITE_END()
 
-BOOST_AUTO_TEST_SUITE(test_ip_filtrated)
+
+BOOST_AUTO_TEST_SUITE(test_ip_filtration)
 
 BOOST_AUTO_TEST_CASE(test_ip_reverse)
 {

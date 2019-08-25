@@ -8,7 +8,7 @@ find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
 add_executable(IPFilter_cli main.cpp)
 add_library(IPFilter lib.cpp)
-add_executable(test test.cpp)
+add_executable(test_IP test_IP.cpp)
 
 set_target_properties(IPFilter_cli IPFilter test PROPERTIES
     CXX_STANDARD 14
@@ -17,14 +17,14 @@ set_target_properties(IPFilter_cli IPFilter test PROPERTIES
 target_include_directories(IPFilter
     PRIVATE "${CMAKE_BINARY_DIR}"
 )
-set_target_properties(test PROPERTIES
+set_target_properties(test_IP PROPERTIES
     COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
     INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
 )
 target_link_libraries(IPFilter_cli PRIVATE
 IPFilter
 )
-target_link_libraries(test
+target_link_libraries(test_IP
 ${Boost_LIBRARIES}
 IPFilter
 )
@@ -43,4 +43,4 @@ include(CPack)
 
 enable_testing()
 
-add_test(test test)
+add_test(test_IP test_IP)
