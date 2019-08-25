@@ -3,6 +3,6 @@
 #include "version.h"
 int version()
 {
-    return ROJECT_VERSION_PATCH_E;
+    return ROJECT_VERSION_PATCH;
 }
 
