@@ -36,5 +36,4 @@ DISTFILES += \
     version.h.in
 
 HEADERS += \
-    lib.h \
-    main.h
+    lib.h

@@ -5,30 +5,15 @@
 #include <vector>
 #include <fstream>
 #include <algorithm>
-#include <main.h>
+#include <lib.h>
 // ("",  '.') -> [""]
 // ("11", '.') -> ["11"]
 // ("..", '.') -> ["", "", ""]
 // ("11.", '.') -> ["11", ""]
 // (".11", '.') -> ["", "11"]
 // ("11.22", '.') -> ["11", "22"]
-bool IPF_R = 0;
-bool IPF_O = 0;
-bool IPF_F_S = 0;
-bool IPF_F = 0;
 
-bool IP_filtration_check_result(int number)
-{
-    if (number == 1)
-        return IPF_R;
-    else if (number == 2)
-        return IPF_O;
-    else if (number == 3)
-        return IPF_F_S;
-    else if (number == 4)
-        return IPF_F;
-    else return 0;
-}
+
 
 void sorting(std::vector<std::vector<int>> *some_vector, bool *check)
 {
