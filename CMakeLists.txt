@@ -8,14 +8,18 @@ configure_file(version.h.in version.h)
 
 add_executable(IPFilter_cli main.cpp)
 add_library(IPFilter lib.cpp)
+add_library(IPF ipf.cpp)
 add_executable(test_IP test_IP.cpp)
 
-set_target_properties(IPFilter_cli IPFilter test_IP PROPERTIES
+set_target_properties(IPFilter_cli IPFilter test_IP IPF PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
 )
 target_include_directories(IPFilter
     PRIVATE "${CMAKE_BINARY_DIR}"
+)
+target_include_directories(IPF
+PRIVATE "${CMAKE_BINARY_DIR}"
 )
 set_target_properties(test_IP PROPERTIES
     COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
@@ -23,10 +27,12 @@ set_target_properties(test_IP PROPERTIES
 )
 target_link_libraries(IPFilter_cli PRIVATE
 IPFilter
+IPF
 )
 target_link_libraries(test_IP
 ${Boost_LIBRARIES}
 IPFilter
+IPF
 )
 
 install(TARGETS IPFilter_cli RUNTIME DESTINATION bin)
