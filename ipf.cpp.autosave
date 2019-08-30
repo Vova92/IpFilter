@@ -1,5 +1,5 @@
 #include "ipf.h"
-a
+
 
 bool IP_filtration_check_result(int number)
 {

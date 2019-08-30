@@ -19,20 +19,20 @@ target_include_directories(IPFilter
     PRIVATE "${CMAKE_BINARY_DIR}"
 )
 target_include_directories(IPF
-PRIVATE "${CMAKE_BINARY_DIR}"
+    PRIVATE "${CMAKE_BINARY_DIR}"
 )
 set_target_properties(test_IP PROPERTIES
     COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
     INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
 )
 target_link_libraries(IPFilter_cli PRIVATE
-IPFilter
-IPF
+    IPFilter
+    IPF
 )
 target_link_libraries(test_IP
-${Boost_LIBRARIES}
-IPFilter
-IPF
+    ${Boost_LIBRARIES}
+    IPFilter
+    IPF
 )
 
 install(TARGETS IPFilter_cli RUNTIME DESTINATION bin)
