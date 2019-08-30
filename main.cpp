@@ -5,7 +5,7 @@
 #include <vector>
 #include <fstream>
 #include <algorithm>
-//#include <ipf.h>
+#include <ipf.h>
 
 void sorting(std::vector<std::vector<int>> *some_vector, bool *check)
 {
