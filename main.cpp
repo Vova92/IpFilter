@@ -5,15 +5,7 @@
 #include <vector>
 #include <fstream>
 #include <algorithm>
-#include <ipf.h>
-// ("",  '.') -> [""]
-// ("11", '.') -> ["11"]
-// ("..", '.') -> ["", "", ""]
-// ("11.", '.') -> ["11", ""]
-// (".11", '.') -> ["", "11"]
-// ("11.22", '.') -> ["11", "22"]
-
-
+//#include <ipf.h>
 
 void sorting(std::vector<std::vector<int>> *some_vector, bool *check)
 {
