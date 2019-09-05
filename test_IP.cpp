@@ -1,3 +1,5 @@
+#define BOOST_TEST_MODULE boost_test_ip_filtration
+
 #include "lib.h"
 #include "ipf.h"
 #include <boost/test/unit_test.hpp>
